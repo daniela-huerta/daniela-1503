@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  --color-shell-50: #fff1e6;
+  --color-shell-500: #e8742a;
+  --color-shell-600: #b9501a;
+  --color-shell-700: #9a4214;
+
+  --color-leaf-50: #eef7e6;
+  --color-leaf-500: #6baa3a;
+  --color-leaf-700: #3f7a2c;
+
+  --color-sky-soft: #cfeefb;
+  --color-cream: #fff8ec;
+  --color-petal-400: #f27ba0;
+
+  --color-bark-600: #7a5638;
+  --color-bark-900: #4a2f1b;
+}
