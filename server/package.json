@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "dev:outage": "cross-env SNAILPAY_SIMULATE_OUTAGE=true tsx watch src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.3",
     "@types/supertest": "^7.2.1",
+    "cross-env": "^10.1.0",
     "supertest": "^7.3.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",

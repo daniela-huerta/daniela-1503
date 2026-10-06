@@ -21,8 +21,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   }
 
+  function creditBalance(amount: number) {
+    if (!user) return;
+    setUser(authService.creditBalance(user.id, amount));
+  }
+
   return (
-    <AuthContext value={{ user, register, login, logout }}>
+    <AuthContext value={{ user, register, login, logout, creditBalance }}>
       {children}
     </AuthContext>
   );

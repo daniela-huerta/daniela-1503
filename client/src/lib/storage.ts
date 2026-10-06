@@ -1,6 +1,8 @@
 export const STORAGE_KEYS = {
   users: 'snail.users',
   session: 'snail.session',
+  transactions: 'snail.transactions',
+  dailyStats: 'snail.dailyStats',
 } as const;
 
 export function readJSON<T>(key: string, fallback: T): T {

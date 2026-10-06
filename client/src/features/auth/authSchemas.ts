@@ -31,17 +31,3 @@ export const loginSchema = z.object({
 
 export type RegisterFormValues = z.infer<typeof registerSchema>;
 export type LoginFormValues = z.infer<typeof loginSchema>;
-export type FieldErrors<T> = Partial<Record<keyof T, string>>;
-
-export function getFieldErrors<T>(error: z.ZodError): FieldErrors<T> {
-  const errors: FieldErrors<T> = {};
-
-  for (const issue of error.issues) {
-    const field = issue.path[0] as keyof T;
-    if (field && !errors[field]) {
-      errors[field] = issue.message;
-    }
-  }
-
-  return errors;
-}

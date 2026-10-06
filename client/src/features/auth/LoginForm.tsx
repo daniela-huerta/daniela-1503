@@ -1,11 +1,10 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { FormField } from '../../components/ui/FormField';
 import {
-  getFieldErrors,
   loginSchema,
-  type FieldErrors,
   type LoginFormValues,
 } from './authSchemas';
+import { getFieldErrors, type FieldErrors } from '../../lib/formErrors';
 import { AuthError } from './types';
 import { useAuth } from './useAuth';
 import { Button } from '../../components/ui/Button';

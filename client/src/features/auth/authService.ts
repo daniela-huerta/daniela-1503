@@ -96,3 +96,20 @@ export function getCurrentUser(): PublicUser | null {
 
   return toPublicUser(user);
 }
+
+export function creditBalance(userId: string, amount: number): PublicUser {
+  const users = getUsers();
+  const user = users.find((storedUser) => storedUser.id === userId);
+
+  if (!user) {
+    throw new Error('User not found');
+  }
+
+  const updatedUser: StoredUser = {
+    ...user,
+    balance: Math.round((user.balance + amount) * 100) / 100,
+  };
+
+  saveUsers(users.map((storedUser) => (storedUser.id === userId ? updatedUser : storedUser)));
+  return toPublicUser(updatedUser);
+}
